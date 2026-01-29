@@ -1,0 +1,30 @@
+tirupati-urban-change-explorer/
+├─ backend/
+│  ├─ app.py
+│  ├─ requirements.txt
+│  └─ data/
+│     ├─ aoi/
+│     │  └─ tirupati_boundary.shp      # AOI shapefile
+│     ├─ rasters/
+│     │  ├─ lulc_t1.tif                # LULC map time 1
+│     │  ├─ lulc_t2.tif                # LULC map time 2
+│     │  ├─ change_map.tif             # change raster (T1→T2)
+│     │  └─ confidence_map.tif         # confidence raster
+│     └─ outputs/
+│        ├─ transition_matrix.csv      # class-to-class transitions
+│        ├─ class_stats_t1_t2.csv      # area stats per class
+│        └─ insights.json              # precomputed insights text
+│
+├─ frontend/
+│  ├─ index.html
+│  ├─ styles.css
+│  └─ main.js
+│
+├─ docs/
+│  ├─ README.md
+│  └─ architecture_diagram.png         # optional, for PPT
+│
+└─ scripts/
+   ├─ preprocess.py                     # load imagery, clip to AOI, basic prep
+   ├─ generate_lulc.py                  # simple LULC classification (T1, T2)
+   └─ compute_change_and_stats.py       # change map, matrix, stats, insights
